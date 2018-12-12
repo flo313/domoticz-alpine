@@ -3,7 +3,7 @@ FROM alpine:edge
 RUN apk add --no-cache git \
 	git \
 	tzdata \
-	libssl1.0 openssl-dev \
+	openssl-dev \
 	build-base cmake \
 	boost-dev \
 	boost-thread \
@@ -30,6 +30,8 @@ RUN apk add --no-cache git \
 	rm -rf /src/domoticz/.git && \
 	rm -rf /src/open-zwave/.git && \
 	apk del git tzdata cmake linux-headers libusb-dev zlib-dev openssl-dev boost-dev sqlite-dev build-base eudev-dev coreutils curl-dev python3-dev 
+
+#	libssl1.0 openssl-dev \
 
 VOLUME /config /src/domoticz/scripts/lua
 
